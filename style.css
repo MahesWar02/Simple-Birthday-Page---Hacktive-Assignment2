@@ -1,61 +1,95 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: poppins;
+    background-color: #A594F9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-.card-container {
-    background-color: white;
+.card {
+    display: flex; /* Mengatur flexbox untuk menempatkan gambar dan teks di samping */
+    background: #CDC1FF;
     padding: 20px;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    width: 80%;
-    max-width: 900px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Menambah lebar maksimum untuk menampung gambar dan teks */
 }
 
-.content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.image-container {
-    flex: 1;
-    margin-right: 20px;
-    border: 2px solid #ccc;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.image-container img {
-    max-width: 100%;
+.birthday-image {
+    width: 40%; /* Menyesuaikan lebar gambar agar sesuai */
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-right: 20px; /* Memberi jarak antara gambar dan teks */
 }
 
 .text-container {
-    flex: 2;
+    width: auto; /* Menyesuaikan lebar kontainer teks */
+    text-align: justify;
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 20px;
+    color: #F5EFFF;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow:
+    3px 3px 0 #A594F9,
+  -1px -1px 0 #A594F9,  
+   1px -1px 0 #A594F9,
+   -1px 1px 0 #A594F9,
+    1px 1px 0 #A594F9;
 }
 
+
 p {
-    color: #555;
+    color: #F5EFFF;
     line-height: 1.6;
     margin-bottom: 10px;
+    text-shadow:
+    3px 3px 0 #A594F9,
+  -1px -1px 0 #A594F9,  
+   1px -1px 0 #A594F9,
+   -1px 1px 0 #A594F9,
+    1px 1px 0 #A594F9;
+}
+
+.confetti {
+
+    width: 200px; /* Menentukan ukuran gambar kecil */
+    margin-left: auto;
+    display: block; /* Memastikan gambar berada di bawah teks */
+}
+
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 70%;
+    background: url('tambahan.png') no-repeat center;
+    background-size: cover; /* Menyesuaikan ukuran gambar agar sesuai dalam kotak */
+    opacity: 0.3; /* Mengatur transparansi agar tidak mengganggu konten */
+    z-index: -1; /* Menempatkan gambar di belakang teks dan foto */
+}
+
+
+/* Dekorasi kedua di sebelah kanan menggunakan ::after */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%; /* Menentukan lebar untuk dekorasi kedua */
+    height: 70%;
+    background: url('tambahan.png') no-repeat center;
+    background-size: cover; /* Menyesuaikan ukuran gambar agar sesuai dalam kotak */
+    opacity: 0.3; /* Mengatur transparansi agar tidak mengganggu konten */
+    z-index: -1; /* Menempatkan gambar di belakang teks dan foto */
 }
